@@ -72,6 +72,10 @@ public final class ComponentData: RCTComponentDataSwiftAdapter {
       remainingProps.removeValue(forKey: key)
     }
 
+    if let view = view as? AnySwiftUIHostingView {
+      view.setRawProps(json)
+    }
+
     // Let the base class `RCTComponentData` handle all remaining props.
     super.setProps(remainingProps, forView: view)
 
