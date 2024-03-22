@@ -13,8 +13,8 @@ type Props<ParamList extends object> = NavigationContainerProps & {
     documentTitle?: DocumentTitleOptions;
     onReady?: () => void;
 };
-declare const NavigationContainer: <RootParamList extends object = ReactNavigation.RootParamList>(props: NavigationContainerProps & {
-    theme?: Theme | undefined;
+export declare const NavigationContainer: <RootParamList extends object = ReactNavigation.RootParamList>(props: NavigationContainerProps & {
+    theme?: ReactNavigation.Theme | undefined;
     linking?: LinkingOptions<RootParamList> | undefined;
     fallback?: React.ReactNode;
     documentTitle?: DocumentTitleOptions | undefined;
@@ -22,5 +22,5 @@ declare const NavigationContainer: <RootParamList extends object = ReactNavigati
 } & {
     ref?: React.Ref<NavigationContainerRef<RootParamList>> | undefined;
 }) => React.ReactElement;
-export default NavigationContainer;
+export {};
 //# sourceMappingURL=NavigationContainer.d.ts.map

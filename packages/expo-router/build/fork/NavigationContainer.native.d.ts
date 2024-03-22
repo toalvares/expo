@@ -9,7 +9,7 @@ type Props<ParamList extends object> = NavigationContainerProps & {
     onReady?: () => void;
 };
 declare const NavigationContainer: <RootParamList extends object = ReactNavigation.RootParamList>(props: NavigationContainerProps & {
-    theme?: Theme | undefined;
+    theme?: ReactNavigation.Theme | undefined;
     linking?: LinkingOptions<RootParamList> | undefined;
     fallback?: React.ReactNode;
     documentTitle?: DocumentTitleOptions | undefined;
