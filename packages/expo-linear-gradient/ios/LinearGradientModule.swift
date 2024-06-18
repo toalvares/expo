@@ -22,17 +22,25 @@ public class LinearGradientModule: Module {
   public func definition() -> ModuleDefinition {
     Name("ExpoLinearGradient")
 
-    View { (props: LinearGradientProps) in
-      ZStack {
-        LinearGradient(
-          colors: props.colors,
-          startPoint: props.startPoint,
-          endPoint: props.endPoint
-        )
-        Text("SwiftUI in Expo 🔥")
-          .font(.system(size: 30))
-          .foregroundColor(.white)
-      }
+    View(LinearGradientSwiftUIView.self)
+  }
+}
+
+struct LinearGradientSwiftUIView: ExpoSwiftUIView {
+  @EnvironmentObject var props: LinearGradientProps
+
+  var body: some View {
+    log.debug("LinearGradientView body")
+
+    return ZStack {
+      LinearGradient(
+        colors: props.colors,
+        startPoint: props.startPoint,
+        endPoint: props.endPoint
+      )
+      Text("SwiftUI in Expo 🔥")
+        .font(.system(size: 30))
+        .foregroundColor(.white)
     }
   }
 }

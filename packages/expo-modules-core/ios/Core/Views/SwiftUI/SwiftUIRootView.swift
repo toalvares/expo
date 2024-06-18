@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-public struct SwiftUIRootView<ViewType: SwiftUI.View, PropsType: ViewProps>: View {
+public struct SwiftUIRootView_legacy<ViewType: SwiftUI.View, PropsType: ViewProps>: View {
   typealias RenderFunction = (_ props: PropsType) -> ViewType
 
   @ObservedObject

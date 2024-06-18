@@ -40,11 +40,11 @@ export default function LinearGradientScreen() {
         alignItems: 'stretch',
         paddingVertical: 10,
       }}>
-      <AnimatedLinearGradient style={{ display: 'none' }} colors={[colorTop, colorBottom]} />
+      {/* <AnimatedLinearGradient style={{ display: 'none' }} colors={[colorTop, colorBottom]} /> */}
       <ColorsTest colors={[colorTop, colorBottom]} />
       <LocationsTest locations={[location, 1.0 - location]} />
       <ControlPointTest start={[position, 0]} />
-      {Platform.OS !== 'web' && <SnapshotTest />}
+      {/* {Platform.OS !== 'web' && <SnapshotTest />} */}
     </ScrollView>
   );
 }

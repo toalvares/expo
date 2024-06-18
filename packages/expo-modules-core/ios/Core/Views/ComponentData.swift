@@ -56,6 +56,17 @@ public final class ComponentData: RCTComponentDataSwiftAdapter {
       log.warn("App context has been lost")
       return
     }
+
+    // Props are set differently in SwiftUI hosting views – delegate the work to `SwiftUIHostingView`.
+    if let hostingView = view as? AnySwiftUIHostingView {
+      hostingView.updateRawProps(props, appContext: appContext)
+
+      // Pass props to React too, to apply layout and styles for the hosting view.
+      super.setProps(props, forView: view)
+
+      return
+    }
+
     let propsDict = viewDefinition.propsDict()
     var remainingProps = props
 
@@ -70,10 +81,6 @@ public final class ComponentData: RCTComponentDataSwiftAdapter {
       try? prop.set(value: Conversions.fromNSObject(newValue), onView: view, appContext: appContext)
 
       remainingProps.removeValue(forKey: key)
-    }
-
-    if let view = view as? AnySwiftUIHostingView {
-      view.setRawProps(json)
     }
 
     // Let the base class `RCTComponentData` handle all remaining props.
