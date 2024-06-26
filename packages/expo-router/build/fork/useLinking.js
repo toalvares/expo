@@ -35,7 +35,7 @@ const React = __importStar(require("react"));
 // createMemoryHistory is a self-contained module with no side effects any only depends on `nanoid` and `tiny-warning`
 // This was removed as we don't use ServerContext
 // import ServerContext from './ServerContext';
-const serverContext_1 = __importDefault(require("../global-state/serverContext"));
+const serverLocationContext_1 = __importDefault(require("../global-state/serverLocationContext"));
 /**
  * Find the matching navigation state that changed between 2 navigation states
  * e.g.: a -> b -> c -> d and a -> b -> c -> e -> f, if history in b changed, b is the matching state
@@ -129,11 +129,11 @@ function useLinking(ref, { enabled = true, config, getStateFromPath = core_1.get
         // Otherwise there's an error in the linking configuration
         return state?.routes.some((r) => !rootState?.routeNames.includes(r.name));
     }, [ref]);
-    const serverLocation = React.useContext(serverContext_1.default)?.location;
+    const serverLocation = React.useContext(serverLocationContext_1.default);
     const getInitialState = React.useCallback(() => {
         let value;
         if (enabledRef.current) {
-            const location = serverLocation ?? (typeof window !== 'undefined' ? window.location : undefined);
+            const location = serverLocation?.location ?? (typeof window !== 'undefined' ? window.location : undefined);
             const path = location ? location.pathname + location.search : undefined;
             if (path) {
                 value = getStateFromPathRef.current(path, configRef.current);

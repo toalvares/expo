@@ -157,14 +157,14 @@ export function useLinking(
     [ref]
   );
 
-  const serverLocation = React.useContext(ServerLocationContext)?.location;
+  const serverLocation = React.useContext(ServerLocationContext);
 
   const getInitialState = React.useCallback(() => {
     let value: ResultState | undefined;
 
     if (enabledRef.current) {
       const location =
-        serverLocation ?? (typeof window !== 'undefined' ? window.location : undefined);
+        serverLocation?.location ?? (typeof window !== 'undefined' ? window.location : undefined);
 
       const path = location ? location.pathname + location.search : undefined;
 
