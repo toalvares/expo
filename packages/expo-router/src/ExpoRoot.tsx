@@ -6,8 +6,8 @@ import React, { type PropsWithChildren, Fragment, type ComponentType, useMemo } 
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { ExpoLinkingOptions } from './getLinkingConfig';
 import { NavigationContainer as UpstreamNavigationContainer } from './fork/NavigationContainer';
+import { ExpoLinkingOptions } from './getLinkingConfig';
 import { useInitializeExpoRouter } from './global-state/router-store';
 import ServerContext, { ServerContextType } from './global-state/serverLocationContext';
 import { RequireContext } from './types';
