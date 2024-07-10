@@ -71,11 +71,11 @@ public final class FileSystemNextModule: Module {
       Function("create") { directory in
         try directory.create()
       }
-      
+
       Function("copy") { (directory, to: FileSystemPath) in
         try directory.copy(to: to)
       }
-      
+
       Function("move") { (directory, to: FileSystemPath) in
         try directory.move(to: to)
       }
