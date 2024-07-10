@@ -37,8 +37,12 @@ public final class FileSystemNextModule: Module {
         file.create()
       }
 
-      Function("copy") { (file, to: FileSystemNextPath) in
+      Function("copy") { (file, to: FileSystemPath) in
         try file.copy(to: to)
+      }
+
+      Function("move") { (file, to: FileSystemPath) in
+        try file.move(to: to)
       }
 
       Property("path") { file in
@@ -68,8 +72,12 @@ public final class FileSystemNextModule: Module {
         try directory.create()
       }
       
-      Function("copy") { (directory, to: FileSystemNextPath) in
+      Function("copy") { (directory, to: FileSystemPath) in
         try directory.copy(to: to)
+      }
+      
+      Function("move") { (directory, to: FileSystemPath) in
+        try directory.move(to: to)
       }
 
       Property("path") { directory in
