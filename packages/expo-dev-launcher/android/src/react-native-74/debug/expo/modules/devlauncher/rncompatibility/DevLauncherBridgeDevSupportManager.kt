@@ -45,6 +45,10 @@ class DevLauncherBridgeDevSupportManager(
     injectDevServerHelper(applicationContext, this, controller)
   }
 
+  @Suppress("INAPPLICABLE_JVM_NAME")
+  @get:JvmName("getJSCallInvokerHolder")
+  override val jSBundleURLForRemoteDebugging: String?  = super.getJSBundleURLForRemoteDebugging()
+
   override fun showNewJavaError(message: String?, e: Throwable?) {
     Log.e("DevLauncher", "$message", e)
     if (!DevLauncherController.wasInitialized()) {

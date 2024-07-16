@@ -42,6 +42,10 @@ class DevLauncherBridgelessDevSupportManager(
 
   override fun getUniqueTag() = "DevLauncherApp-Bridgeless"
 
+  @Suppress("INAPPLICABLE_JVM_NAME")
+  @get:JvmName("getJSCallInvokerHolder")
+  override val jSBundleURLForRemoteDebugging: String?  = super.getJSBundleURLForRemoteDebugging()
+
   override fun startInspector() {
     // no-op for the default `startInspector` which would be implicitly called
     // right after `ReactInstanceManager` construction.
