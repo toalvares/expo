@@ -12,6 +12,7 @@
 - [Web] Add support for events. ([#29742](https://github.com/expo/expo/pull/29742) by [@behenate](https://github.com/behenate))
 - [iOS] Add ability to disable live text interaction. ([#30093](https://github.com/expo/expo/pull/30093) by [@fobos531](https://github.com/fobos531))
 - [iOS] Add 'allowsExternalPlayback' property to control the AirPlay to stream video or mirror the screen. ([#30436](https://github.com/expo/expo/pull/30436) by [@adsalihac](https://github.com/adsalihac))
+- [Web] Add support for Picture in Picture. ([#30524](https://github.com/expo/expo/pull/30524) by [@behenate](https://github.com/behenate))
 
 ### 🐛 Bug fixes
 
